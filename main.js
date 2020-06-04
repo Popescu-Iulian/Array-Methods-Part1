@@ -72,7 +72,7 @@ const fullNames = inventors.map(
 	(inventor) => `${inventor.first} ${inventor.last}`
 );
 
-console.log(fullNames);
+console.table(fullNames);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
@@ -86,7 +86,7 @@ const totalYears = inventors.reduce((total, inventor) => {
 	return total + (inventor.passed - inventor.year);
 }, 0);
 
-console.log(totalYears);
+console.table(totalYears);
 
 // 5. Sort the inventors by years lived
 const oldest = inventors.sort(function (a, b) {
@@ -98,13 +98,15 @@ const oldest = inventors.sort(function (a, b) {
 console.table(oldest);
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+// enter on https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris and the uncomment the code below:
 
 // const category = document.querySelector('.mw-category');
 // const links = Array.from(category.querySelectorAll('a'));
 // const de = links
-//             .map(link => link.textContent)
-//             .filter(streetName => streetName.includes('de'));
+// 	.map((link) => link.textContent)
+// 	.filter((streetName) => streetName.includes('de'));
+
+// console.table(de);
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
@@ -114,7 +116,7 @@ const alpha = people.sort((lastOne, nextOne) => {
 	return aLast > bLast ? 1 : -1;
 });
 
-console.log(alpha);
+console.table(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
@@ -136,7 +138,7 @@ const data = [
 	'pogostick'
 ];
 
-const transportation = data.reduce(function (obj, item) {
+const transportation = data.reduce((obj, item) => {
 	if (!obj[item]) {
 		obj[item] = 0;
 	}
@@ -144,4 +146,4 @@ const transportation = data.reduce(function (obj, item) {
 	return obj;
 }, {});
 
-console.log(transportation);
+console.table(transportation);
